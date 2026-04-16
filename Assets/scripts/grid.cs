@@ -1,16 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class grid : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Button[] gridButtons;
+    void Awake()
     {
-        
+        foreach (var button in gridButtons)
+        {
+            button.onClick.
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
