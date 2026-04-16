@@ -1,23 +1,27 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class playerTurn : MonoBehaviour
 {
     public StyleGroup[] styleGroups;
-    public Button[] gridButtons;
+    Button[] gridButtons;
     int buttonIndex;
     public int styleIndex;
 
     private void Awake()
     {
+        gridButtons = GetComponentsInChildren<Button>();
+
         for(int i = 0; i < gridButtons.Length; i++)
         {
             buttonIndex = i;
+            gridButtons[i].onClick.AddListener(() => buttonClick(buttonIndex));
             gridButtons[i].image.sprite = null;
         }
 
     }
-    public void onClick()
+    public void buttonClick(int index)
     {
         gridButtons[buttonIndex].image.sprite = styleGroups[styleIndex].X;
     }
