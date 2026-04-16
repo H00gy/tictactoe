@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class playerTurn : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Sprite[] XOs;
+    SpriteRenderer sr;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        sr = GetComponent<SpriteRenderer>();
+
+    }
+    public void onClick()
+    {
+
     }
 }

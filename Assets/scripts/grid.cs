@@ -8,7 +8,7 @@ public class grid : MonoBehaviour
     {
         foreach (var button in gridButtons)
         {
-            button.onClick.
+            //button.onClick.
         }
     }
 
