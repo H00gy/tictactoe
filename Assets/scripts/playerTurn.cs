@@ -5,6 +5,7 @@ public class playerTurn : MonoBehaviour
 {
     public StyleGroup[] styleGroups;
     Button[] gridButtons;
+    playerSwitch players;
 
     public int styleIndex;
 
@@ -14,9 +15,10 @@ public class playerTurn : MonoBehaviour
         styleIndex = Random.Range(0, 2);
 
         // awake
-        gridButtons = GetComponentsInChildren<Button>();
+        gridButtons = GetComponentsInChildren<Button>(); // finds all buttons
+        players = GetComponent<playerSwitch>();
 
-        for(int i = 0; i < gridButtons.Length; i++)
+        for(int i = 0; i < gridButtons.Length; i++) 
         {
             int buttonIndex = i;
             gridButtons[i].onClick.AddListener(() => buttonClick(buttonIndex)); // so I don't manually assign clicks
@@ -26,8 +28,18 @@ public class playerTurn : MonoBehaviour
     }
     public void buttonClick(int index)
     {
-        Debug.Log(index.ToString() + " button clicked");
-        gridButtons[index].image.sprite = styleGroups[styleIndex].X;
+        if (gridButtons[index].image.sprite != null) { return; } // already taken
+        
+        if (players.player == true)
+        {
+            gridButtons[index].image.sprite = styleGroups[styleIndex].X;
+        }
+        else
+        {
+            gridButtons[index].image.sprite = styleGroups[styleIndex].O;
+        }
+        players.playerChange();
+        
     }
 
 
