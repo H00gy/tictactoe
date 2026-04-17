@@ -5,7 +5,7 @@ public class PlayerTurn : MonoBehaviour
 {
     public StyleGroup[] StyleGroups;
     Button[] GridButtons;
-    PlayerSwitch Players;
+    [SerializeField] PlayerSwitch Players;
 
     public int StyleIndex;
 
@@ -16,7 +16,7 @@ public class PlayerTurn : MonoBehaviour
 
         // awake
         GridButtons = GetComponentsInChildren<Button>(); // finds all buttons
-        Players = GetComponent<PlayerSwitch>();
+        
 
         for(int i = 0; i < GridButtons.Length; i++) 
         {
@@ -45,23 +45,5 @@ public class PlayerTurn : MonoBehaviour
     }
 
 
-    // debugging
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            StyleIndex = 0;
-            Debug.Log("index is 1");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            StyleIndex = 1;
-            Debug.Log("index is 2");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            StyleIndex = 2;
-            Debug.Log("index is 3");
-        }
-    }
+   
 }

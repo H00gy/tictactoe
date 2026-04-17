@@ -1,5 +1,5 @@
 using UnityEngine;
-[System.Serializable]
+
 
 public enum PlayerSymbol { X, O }
 public class PlayerSwitch : MonoBehaviour
