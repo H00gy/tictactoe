@@ -5,7 +5,9 @@ public class PlayerTurn : MonoBehaviour
 {
     public StyleGroup[] StyleGroups;
     Button[] GridButtons;
+    int GridButtonCount = 1;
     [SerializeField] PlayerSwitch Players;
+    [SerializeField] OnGameEnd GameEndState;
 
     public int StyleIndex;
 
@@ -28,10 +30,12 @@ public class PlayerTurn : MonoBehaviour
     }
     public void OnButtonClick(int index)
     {
+        
         if (GridButtons[index].image.sprite != null) { return; } // already taken
 
         
-        if (Players.CurrentTurn == PlayerSymbol.X)
+        
+        if (Players.CurrentTurn == PlayerSymbol.X) // assign style
         {
             GridButtons[index].image.sprite = StyleGroups[StyleIndex].X;
         }
@@ -39,8 +43,16 @@ public class PlayerTurn : MonoBehaviour
         {
             GridButtons[index].image.sprite = StyleGroups[StyleIndex].O;
         }
+
+        GridButtonCount++;
+
+        if (GridButtonCount > GridButtons.Length) { GameEndState.WhenGameEnd(); }
+
+        Players.ToggleTurn(); // change turn
+
         
-        Players.ToggleTurn();
+        
+        
         
     }
 
