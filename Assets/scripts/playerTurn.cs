@@ -3,42 +3,44 @@ using UnityEngine.UI;
 
 public class PlayerTurn : MonoBehaviour
 {
-    public StyleGroup[] styleGroups;
-    Button[] gridButtons;
-    PlayerSwitch players;
+    public StyleGroup[] StyleGroups;
+    Button[] GridButtons;
+    PlayerSwitch Players;
 
-    public int styleIndex;
+    public int StyleIndex;
 
     private void Awake()
     {
         // debugging
-        styleIndex = Random.Range(0, 2);
+        StyleIndex = Random.Range(0, 2);
 
         // awake
-        gridButtons = GetComponentsInChildren<Button>(); // finds all buttons
-        players = GetComponent<PlayerSwitch>();
+        GridButtons = GetComponentsInChildren<Button>(); // finds all buttons
+        Players = GetComponent<PlayerSwitch>();
 
-        for(int i = 0; i < gridButtons.Length; i++) 
+        for(int i = 0; i < GridButtons.Length; i++) 
         {
             int buttonIndex = i;
-            gridButtons[i].onClick.AddListener(() => buttonClick(buttonIndex)); // so I don't manually assign clicks
-            gridButtons[i].image.sprite = null;
+            GridButtons[i].onClick.AddListener(() => OnButtonClick(buttonIndex)); // so I don't manually assign clicks
+            GridButtons[i].image.sprite = null;
         }
 
     }
-    public void buttonClick(int index)
+    public void OnButtonClick(int index)
     {
-        if (gridButtons[index].image.sprite != null) { return; } // already taken
+        if (GridButtons[index].image.sprite != null) { return; } // already taken
+
         
-        if (players.player)
+        if (Players.CurrentTurn == PlayerSymbol.X)
         {
-            gridButtons[index].image.sprite = styleGroups[styleIndex].X;
+            GridButtons[index].image.sprite = StyleGroups[StyleIndex].X;
         }
         else
         {
-            gridButtons[index].image.sprite = styleGroups[styleIndex].O;
+            GridButtons[index].image.sprite = StyleGroups[StyleIndex].O;
         }
-        players.playerChange();
+        
+        Players.ToggleTurn();
         
     }
 
@@ -48,17 +50,17 @@ public class PlayerTurn : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            styleIndex = 0;
+            StyleIndex = 0;
             Debug.Log("index is 1");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            styleIndex = 1;
+            StyleIndex = 1;
             Debug.Log("index is 2");
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            styleIndex = 2;
+            StyleIndex = 2;
             Debug.Log("index is 3");
         }
     }

@@ -1,13 +1,16 @@
 using UnityEngine;
+[System.Serializable]
 
+public enum PlayerSymbol { X, O }
 public class PlayerSwitch : MonoBehaviour
 {
-    public bool player;
+   
+    public PlayerSymbol CurrentTurn;
 
-    public void playerChange()
+    public void ToggleTurn()
     {
-        player = !player; // player change
-        
+        // change logic
+        CurrentTurn = (CurrentTurn == PlayerSymbol.X) ? PlayerSymbol.O : PlayerSymbol.X; 
 
     }
 }
