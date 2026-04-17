@@ -10,9 +10,9 @@ public class OnGameEnd : MonoBehaviour
     [Header("Winning Patters")]
      public WinningPatternsGroup[] WinningCombinations;
     int TileCount;
-    public void WhenGameEnd()
+    public void DrawState()
     {
-        Debug.Log("draw ");
+        Debug.Log("draw "); 
     }
     public void WinState()
     {
