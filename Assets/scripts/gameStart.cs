@@ -2,8 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameStart : MonoBehaviour
 {
-    public Button[] GridButtons;
+    [Header("References")]
     [SerializeField] PlayerTurn PlayerTurns;
+    public Button[] GridButtons;
+    
     private void Awake()
     {
         // awake

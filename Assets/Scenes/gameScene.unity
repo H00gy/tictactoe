@@ -132,9 +132,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 569476351}
     m_Modifications:
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: gridButton (6)
+      value: GridButton3
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -308,9 +320,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 569476351}
     m_Modifications:
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: gridButton (8)
+      value: GridButton8
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -556,7 +580,6 @@ GameObject:
   - component: {fileID: 569476353}
   - component: {fileID: 569476352}
   - component: {fileID: 569476354}
-  - component: {fileID: 569476355}
   m_Layer: 5
   m_Name: grid
   m_TagString: Untagged
@@ -576,15 +599,15 @@ RectTransform:
   m_LocalScale: {x: 10.17, y: 10.17, z: 10.17}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1139707754}
   - {fileID: 506610034}
   - {fileID: 688916222}
-  - {fileID: 374653879}
-  - {fileID: 1718297332}
-  - {fileID: 1139707754}
   - {fileID: 1767556142}
+  - {fileID: 1964765355}
   - {fileID: 56517179}
   - {fileID: 1502578163}
-  - {fileID: 1964765355}
+  - {fileID: 1718297332}
+  - {fileID: 374653879}
   m_Father: {fileID: 948334888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -639,30 +662,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 569476350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 320fc643a99fb7044823a64d7692e535, type: 3}
+  m_Script: {fileID: 11500000, guid: 83e17ab45ac21e840a56c5df35e26a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  styleGroups:
-  - X: {fileID: 5800915590215233699, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
-    O: {fileID: -4543041181297324008, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
-  - X: {fileID: 5828903514592741260, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
-    O: {fileID: -5029703094226174211, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
-  - X: {fileID: -5671269848223593115, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
-    O: {fileID: -1950665664707622766, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
-  styleIndex: 0
---- !u!114 &569476355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569476350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec8e121ad535e72459d59dc3cf100502, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: 0
+  GridButtons: []
+  PlayerTurns: {fileID: 1716741798}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,9 +764,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 569476351}
     m_Modifications:
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: gridButton (5)
+      value: GridButton1
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -967,9 +983,21 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: gridButton (1)
+      value: GridButton2
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -1069,9 +1097,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 569476351}
     m_Modifications:
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: gridButton (2)
+      value: GridButton7
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -1166,9 +1206,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 569476351}
     m_Modifications:
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: gridButton (4)
+      value: GridButton4
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -1268,9 +1320,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 569476351}
     m_Modifications:
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: gridButton (3)
+      value: GridButton6
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -1357,6 +1421,90 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+--- !u!1 &1716741794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1716741796}
+  - component: {fileID: 1716741795}
+  - component: {fileID: 1716741797}
+  - component: {fileID: 1716741798}
+  m_Layer: 0
+  m_Name: gameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1716741795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716741794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8e121ad535e72459d59dc3cf100502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentTurn: 0
+--- !u!4 &1716741796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716741794}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1716741797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716741794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6534c09d1eb5a64eb4c1e697a3919dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerTurns: {fileID: 1716741798}
+  Players: {fileID: 1716741795}
+--- !u!114 &1716741798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716741794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320fc643a99fb7044823a64d7692e535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Grid: {fileID: 569476354}
+  Players: {fileID: 1716741795}
+  GameEndState: {fileID: 1716741797}
+  StyleGroups:
+  - X: {fileID: 5800915590215233699, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
+    O: {fileID: -4543041181297324008, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
+  - X: {fileID: 5828903514592741260, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
+    O: {fileID: -5029703094226174211, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
+  - X: {fileID: -5671269848223593115, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
+    O: {fileID: -1950665664707622766, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
+  StyleIndex: 0
 --- !u!224 &1718297332 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
@@ -1375,6 +1523,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 569476351}
     m_Modifications:
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
       value: gridButton (7)
@@ -1477,9 +1637,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 569476351}
     m_Modifications:
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 160386334433388343, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: gridButton
+      value: GridButton5
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -1574,3 +1746,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 948334888}
   - {fileID: 294169096}
+  - {fileID: 1716741796}

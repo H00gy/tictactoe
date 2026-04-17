@@ -29,22 +29,19 @@ public class PlayerTurn : MonoBehaviour
         if (Players.CurrentTurn == PlayerSymbol.X) // assign style
         {
             Grid.GridButtons[index].image.sprite = StyleGroups[StyleIndex].X;
+            GameEndState.WinState(Grid.GridButtons[index]);
         }
         else
         {
             Grid.GridButtons[index].image.sprite = StyleGroups[StyleIndex].O;
+            GameEndState.WinState(Grid.GridButtons[index]);
         }
 
         GridButtonCount++;
 
-        if (GridButtonCount > Grid.GridButtons.Length) { GameEndState.WhenGameEnd(); }
+        if (GridButtonCount > Grid.GridButtons.Length) { GameEndState.WhenGameEnd(); } // draws will rewrite
 
         Players.ToggleTurn(); // change turn
-
-        
-        
-        
-        
     }
 
 
