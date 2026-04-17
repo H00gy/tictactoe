@@ -3,6 +3,7 @@ using UnityEngine;
 public class OnGameEnd : MonoBehaviour
 {
     [SerializeField] PlayerTurn PlayerTurns;
+    [SerializeField] PlayerSwitch Players;
     
     public void WhenGameEnd()
     {
@@ -10,8 +11,9 @@ public class OnGameEnd : MonoBehaviour
     }
     public void WinState()
     {
-        // UI stuff here
-
         
+
+
+
     }
 }
