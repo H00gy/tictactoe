@@ -12,9 +12,9 @@ public class OnGameEnd : MonoBehaviour
     int TileCount;
     public void WhenGameEnd()
     {
-        Debug.Log("called game end ");
+        Debug.Log("draw ");
     }
-    public void WinState(Button Tile)
+    public void WinState()
     {
 
         foreach (var group in WinningCombinations) // looks through all tile win combo groups
@@ -27,9 +27,17 @@ public class OnGameEnd : MonoBehaviour
             {
                 continue; 
             }
-            if (B1.image.sprite == B2.image.sprite == B3.image.sprite == Tile.image.sprite) // win condition
+            if (B1.image.sprite == B2.image.sprite && B2.image.sprite == B3.image.sprite) // win condition
             {
-                Debug.Log("winner is " + Tile.image.sprite.name);
+                
+                if (Players.CurrentTurn == PlayerSymbol.X)
+                {
+                    Debug.Log("winner is " + Players.CurrentTurn);
+                }
+                else
+                {
+                    Debug.Log("winner is " + Players.CurrentTurn);
+                }
             }
         }
 
