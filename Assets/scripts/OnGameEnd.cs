@@ -30,7 +30,7 @@ public class OnGameEnd : MonoBehaviour
             if (B1.image.sprite == B2.image.sprite && B2.image.sprite == B3.image.sprite) // win condition
             {
                 
-                if (Players.CurrentTurn == PlayerSymbol.X)
+                if (Players.CurrentTurn == PlayerSymbol.X) // who wins
                 {
                     Debug.Log("winner is " + Players.CurrentTurn);
                 }

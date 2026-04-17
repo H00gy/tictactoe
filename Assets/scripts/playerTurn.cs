@@ -39,9 +39,9 @@ public class PlayerTurn : MonoBehaviour
 
         GridButtonCount++;
 
-        if (GridButtonCount > Grid.GridButtons.Length) { GameEndState.WhenGameEnd(); } // draws will rewrite
+        if (GridButtonCount > Grid.GridButtons.Length) { GameEndState.DrawState(); } // draws will rewrite
 
-        Players.ToggleTurn(); // change turn
+        Players.ToggleTurn(); // change turn, last so it doesn't determine the wrong winning player
     }
 
 
