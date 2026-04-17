@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class playerTurn : MonoBehaviour
+public class PlayerTurn : MonoBehaviour
 {
     public StyleGroup[] styleGroups;
     Button[] gridButtons;
-    playerSwitch players;
+    PlayerSwitch players;
 
     public int styleIndex;
 
@@ -16,7 +16,7 @@ public class playerTurn : MonoBehaviour
 
         // awake
         gridButtons = GetComponentsInChildren<Button>(); // finds all buttons
-        players = GetComponent<playerSwitch>();
+        players = GetComponent<PlayerSwitch>();
 
         for(int i = 0; i < gridButtons.Length; i++) 
         {
@@ -30,7 +30,7 @@ public class playerTurn : MonoBehaviour
     {
         if (gridButtons[index].image.sprite != null) { return; } // already taken
         
-        if (players.player == true)
+        if (players.player)
         {
             gridButtons[index].image.sprite = styleGroups[styleIndex].X;
         }

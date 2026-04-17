@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class grid : MonoBehaviour
+public class GridScript : MonoBehaviour
 {
     public Button[] gridButtons;
     void Awake()

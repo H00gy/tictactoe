@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class playerSwitch : MonoBehaviour
+public class PlayerSwitch : MonoBehaviour
 {
     public bool player;
 

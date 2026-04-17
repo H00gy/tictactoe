@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class gameStart : MonoBehaviour
+public class GameStart : MonoBehaviour
 {
     private void Awake()
     {
