@@ -1175,6 +1175,7 @@ GameObject:
   - component: {fileID: 946178342}
   - component: {fileID: 946178344}
   - component: {fileID: 946178343}
+  - component: {fileID: 946178345}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -1198,7 +1199,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 67, y: -18.7}
+  m_AnchoredPosition: {x: 140, y: -18.7}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &946178343
@@ -1221,7 +1222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 10:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1300,6 +1301,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946178341}
   m_CullTransparentMesh: 1
+--- !u!114 &946178345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946178341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea4d00e9c37bb24bb134b7a29240d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameEnd: {fileID: 1716741799}
+  Players: {fileID: 1716741795}
+  timerText: {fileID: 946178343}
+  TimerSpeed: 1
 --- !u!1 &948334887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2233,6 +2250,7 @@ MonoBehaviour:
     - {fileID: 1502578164}
     - {fileID: 1964765356}
     - {fileID: 688916223}
+  SomeoneWon: 0
 --- !u!224 &1718297332 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
