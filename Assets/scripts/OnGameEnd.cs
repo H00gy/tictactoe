@@ -10,6 +10,8 @@ public class OnGameEnd : MonoBehaviour
     [Header("Winning Patters")]
      public WinningPatternsGroup[] WinningCombinations;
     int TileCount;
+    [Header("Other Variables")]
+    public bool SomeoneWon = false;
     public void DrawState()
     {
         Debug.Log("draw "); 
@@ -32,15 +34,21 @@ public class OnGameEnd : MonoBehaviour
                 
                 if (Players.CurrentTurn == PlayerSymbol.X) // who wins
                 {
-                    Debug.Log("winner is " + Players.CurrentTurn);
+                    DisplayWinner(Players.CurrentTurn);
                 }
                 else
                 {
-                    Debug.Log("winner is " + Players.CurrentTurn);
+                    DisplayWinner(Players.CurrentTurn);
                 }
             }
         }
 
     }
+    public void DisplayWinner(PlayerSymbol winner)
+    {
+        Debug.Log("winner is " + winner);  //temp
+        SomeoneWon= true;
+    }
+
     
 }
