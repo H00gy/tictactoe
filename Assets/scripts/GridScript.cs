@@ -3,14 +3,23 @@ using UnityEngine.UI;
 
 public class GridScript : MonoBehaviour
 {
-    public Button[] gridButtons;
-    void Awake()
+    [Header("References")]
+    [SerializeField] PlayerTurn PlayerTurns;
+    public Button[] GridButtons;
+
+    private void Awake()
     {
-        foreach (var button in gridButtons)
+        // awake
+        GridButtons = GetComponentsInChildren<Button>(); // finds all buttons
+
+
+        for (int i = 0; i < GridButtons.Length; i++)
         {
-            //button.onClick.
+            int buttonIndex = i;
+            GridButtons[i].onClick.AddListener(() => PlayerTurns.OnButtonClick(buttonIndex)); // so I don't manually assign clicks
+            GridButtons[i].image.sprite = null;
         }
     }
 
-    
+
 }

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PlayerTurn : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] GameStart Grid;
+    [SerializeField] GridScript Grid;
     [SerializeField] PlayerSwitch Players;
     [SerializeField] OnGameEnd GameEndState;
     [Header("XO Styles")]
