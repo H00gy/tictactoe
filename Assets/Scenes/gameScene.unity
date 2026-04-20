@@ -146,7 +146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: GridButton3
+      value: GridButtonTopRight
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -496,7 +496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: GridButton8
+      value: GridButtonBottomMid
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -1067,6 +1067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 738758251}
   - component: {fileID: 738758252}
+  - component: {fileID: 738758253}
   m_Layer: 5
   m_Name: StrikeLineManager
   m_TagString: Untagged
@@ -1114,8 +1115,105 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StrikeLineManager: {fileID: 738758250}
-  Duration: 0
-  ElapsedTime: 0
+  Duration: 0.5
+  Whoosh: {fileID: 738758253}
+--- !u!82 &738758253
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738758250}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ccc27791be4323d499287c9a484d58ec, type: 3}
+  m_Resource: {fileID: 8300000, guid: ccc27791be4323d499287c9a484d58ec, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &820948904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1138,7 +1236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: GridButton1
+      value: GridButtonTopLeft
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -1814,7 +1912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: GridButton2
+      value: GridButtonTopMid
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -2072,7 +2170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: GridButton7
+      value: GridButtonBottomLeft
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -2320,7 +2418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: GridButton4
+      value: GridButtonMidLeft
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -2508,7 +2606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: GridButton6
+      value: GridButtonMidRight
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -2842,40 +2940,48 @@ MonoBehaviour:
   Grid: {fileID: 0}
   PlayerTurns: {fileID: 1716741798}
   Players: {fileID: 1716741795}
-  Strike: {fileID: 0}
+  Strike: {fileID: 738758252}
   WinningCombinations:
   - WinningPatterns:
     - {fileID: 1139707755}
     - {fileID: 506610035}
     - {fileID: 688916223}
+    StrikeLine: {fileID: 2025248663}
   - WinningPatterns:
     - {fileID: 1767556143}
     - {fileID: 1964765356}
     - {fileID: 1390721936}
+    StrikeLine: {fileID: 1114290014}
   - WinningPatterns:
     - {fileID: 1502578164}
     - {fileID: 1718297333}
     - {fileID: 1989144642}
+    StrikeLine: {fileID: 298117494}
   - WinningPatterns:
     - {fileID: 1139707755}
     - {fileID: 1767556143}
     - {fileID: 1502578164}
+    StrikeLine: {fileID: 1669237845}
   - WinningPatterns:
     - {fileID: 506610035}
     - {fileID: 1964765356}
     - {fileID: 1718297333}
+    StrikeLine: {fileID: 212785917}
   - WinningPatterns:
     - {fileID: 688916223}
     - {fileID: 1390721936}
     - {fileID: 1989144642}
+    StrikeLine: {fileID: 893769236}
   - WinningPatterns:
     - {fileID: 1139707755}
     - {fileID: 1964765356}
     - {fileID: 1989144642}
+    StrikeLine: {fileID: 1951629293}
   - WinningPatterns:
     - {fileID: 1502578164}
     - {fileID: 1964765356}
     - {fileID: 688916223}
+    StrikeLine: {fileID: 1675127769}
   SomeoneWon: 0
 --- !u!224 &1718297332 stripped
 RectTransform:
@@ -2931,7 +3037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: GridButton9
+      value: GridButtonBottomRight
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
@@ -3233,7 +3339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4075020611525550453, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Name
-      value: GridButton5
+      value: GridButtonMid
       objectReference: {fileID: 0}
     - target: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
       propertyPath: m_Pivot.x
