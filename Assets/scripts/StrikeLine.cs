@@ -6,6 +6,7 @@ public class StrikeLine : MonoBehaviour
 {
     public GameObject StrikeLineManager;
     public float Duration;
+    public AudioSource Whoosh;
 
     public void Start()
     {
@@ -17,6 +18,7 @@ public class StrikeLine : MonoBehaviour
     }
     public void GenerateStrikeAnimation(Image StrikeLine)
     {
-        StrikeLine.DOFillAmount(1f, Duration);
+        StrikeLine.DOFillAmount(1f, Duration); // animated strikeline
+        Whoosh.Play();
     }
 }
