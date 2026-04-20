@@ -7,6 +7,7 @@ public class OnGameEnd : MonoBehaviour
     [SerializeField] GameStart Grid;
     [SerializeField] PlayerTurn PlayerTurns;
     [SerializeField] PlayerSwitch Players;
+    [SerializeField] StrikeLine Strike;
     [Header("Winning Patters")]
      public WinningPatternsGroup[] WinningCombinations;
     int TileCount;
@@ -35,10 +36,12 @@ public class OnGameEnd : MonoBehaviour
                 if (Players.CurrentTurn == PlayerSymbol.X) // who wins
                 {
                     DisplayWinner(Players.CurrentTurn);
+                    Strike.GenerateStrikeAnimation(B1.transform.position,B3.transform.position);
                 }
                 else
                 {
                     DisplayWinner(Players.CurrentTurn);
+                    Strike.GenerateStrikeAnimation(B1.transform.position, B3.transform.position);
                 }
             }
         }
