@@ -1,30 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
+using DG.Tweening;
 public class StrikeLine : MonoBehaviour
 {
     public GameObject StrikeLineManager;
     public float Duration;
-    public float ElapsedTime;
 
     public void Start()
     {
-        Image[] AllLines = StrikeLineManager.GetComponentsInChildren<Image>();
+        Image[] AllLines = StrikeLineManager.GetComponentsInChildren<Image>(); // clears all strike lines
         foreach (Image img in AllLines)
         {
             img.fillAmount= 0;
-        }
-           
-        
-        
+        } 
     }
-    public void GenerateStrikeAnimation(Vector2 StartPos, Vector2 EndPos)
+    public void GenerateStrikeAnimation(Image StrikeLine)
     {
-        
-        
-       
-        StrikeLineManager.GetComponentInChildren<Image>().fillAmount = Mathf.Lerp(0,1, ElapsedTime / Duration);
-
+        StrikeLine.DOFillAmount(1f, Duration);
     }
 }

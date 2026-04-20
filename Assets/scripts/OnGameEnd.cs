@@ -25,6 +25,7 @@ public class OnGameEnd : MonoBehaviour
             Button B1 = group.WinningPatterns[0];
             Button B2 = group.WinningPatterns[1];  
             Button B3 = group.WinningPatterns[2];
+            Image StrikeLine = group.StrikeLine;
 
             if (B1.image.sprite == null) // no win possible
             {
@@ -36,12 +37,12 @@ public class OnGameEnd : MonoBehaviour
                 if (Players.CurrentTurn == PlayerSymbol.X) // who wins
                 {
                     DisplayWinner(Players.CurrentTurn);
-                    Strike.GenerateStrikeAnimation(B1.transform.position,B3.transform.position);
+                    Strike.GenerateStrikeAnimation(StrikeLine);
                 }
                 else
                 {
                     DisplayWinner(Players.CurrentTurn);
-                    Strike.GenerateStrikeAnimation(B1.transform.position, B3.transform.position);
+                    Strike.GenerateStrikeAnimation(StrikeLine);
                 }
             }
         }

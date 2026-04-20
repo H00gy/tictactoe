@@ -4,4 +4,5 @@ using UnityEngine.UI;
 public class WinningPatternsGroup 
 {
     public Button[] WinningPatterns;
+    public Image StrikeLine;
 }
