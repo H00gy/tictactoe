@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class OnGameEnd : MonoBehaviour
 {
@@ -8,11 +9,19 @@ public class OnGameEnd : MonoBehaviour
     [SerializeField] PlayerTurn PlayerTurns;
     [SerializeField] PlayerSwitch Players;
     [SerializeField] StrikeLine Strike;
-    [Header("Winning Patters")]
+    [SerializeField] GameObject GameOverPopup;
+    [Header("Winning Patterns")]
      public WinningPatternsGroup[] WinningCombinations;
     int TileCount;
     [Header("Other Variables")]
     public bool SomeoneWon = false;
+    public float EndGamePopupWait;
+
+    private void Start()
+    {
+        GameOverPopup.SetActive(false);
+
+    }
     public void DrawState()
     {
         Debug.Log("draw "); 
@@ -36,25 +45,35 @@ public class OnGameEnd : MonoBehaviour
                 
                 if (Players.CurrentTurn == PlayerSymbol.X) // who wins
                 {
-                    DisplayWinner(Players.CurrentTurn);
+                    
 
                     Strike.GenerateStrikeAnimation(StrikeLine);
-                    
+                    StartCoroutine(DisplayWinner(Players.CurrentTurn));
+                    return;
+
+
                 }
                 else
                 {
-                    DisplayWinner(Players.CurrentTurn);
+                    
                     Strike.GenerateStrikeAnimation(StrikeLine);
+                    StartCoroutine(DisplayWinner(Players.CurrentTurn));
+                    return;
                 }
             }
         }
 
     }
-    public void DisplayWinner(PlayerSymbol winner)
+    IEnumerator DisplayWinner(PlayerSymbol winner)
     {
+
         Debug.Log("winner is " + winner);  //temp
-        SomeoneWon= true;
+        SomeoneWon = true;
+        yield return new WaitForSeconds(EndGamePopupWait);
+        GameOverPopup.SetActive(true);
+
     }
+   
 
     
 }
