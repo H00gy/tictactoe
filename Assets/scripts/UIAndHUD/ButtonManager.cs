@@ -7,7 +7,7 @@ public class ButtonManager : MonoBehaviour
     
     public void Retry() // for retry button
     {
-        sceneController.ReloadCurrentLevel();
+        sceneController.LoadGame();
     }
     public void ExitToMenu()
     {

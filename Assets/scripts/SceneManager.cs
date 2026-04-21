@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public void ReloadCurrentLevel()
+    public void LoadGame()
     {
         SceneManager.LoadScene(0);
     }
