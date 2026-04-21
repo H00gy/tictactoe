@@ -38,6 +38,7 @@ public class OnGameEnd : MonoBehaviour
                 {
                     DisplayWinner(Players.CurrentTurn);
                     Strike.GenerateStrikeAnimation(StrikeLine);
+                    
                 }
                 else
                 {
