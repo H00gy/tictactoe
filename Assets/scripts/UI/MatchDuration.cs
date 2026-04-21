@@ -8,7 +8,7 @@ public class MatchDuration : MonoBehaviour
     [SerializeField] OnGameEnd GameEnd;
     [SerializeField] PlayerSwitch Players;
     [Header("Timer UI")]
-    [SerializeField] private TMP_Text timerText = null;
+    [SerializeField] public TMP_Text timerText = null;
 
     [SerializeField] private float TimerSpeed = 1.0f;
     private float CurrentTime;
@@ -30,9 +30,6 @@ public class MatchDuration : MonoBehaviour
         }
 
 
-
-        TimerFinished();
-
     }
     void UpdateTimerText() 
     {
@@ -44,9 +41,5 @@ public class MatchDuration : MonoBehaviour
         int seconds = Mathf.FloorToInt(time % 60);
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
-    void TimerFinished()
-    {
-        Debug.Log("timer finished");
-        //endGame.gameOverEnd();
-    }
+    
 }

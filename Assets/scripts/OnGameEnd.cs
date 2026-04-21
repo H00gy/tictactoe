@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System.Collections;
 
 public class OnGameEnd : MonoBehaviour
@@ -9,13 +10,18 @@ public class OnGameEnd : MonoBehaviour
     [SerializeField] PlayerTurn PlayerTurns;
     [SerializeField] PlayerSwitch Players;
     [SerializeField] StrikeLine Strike;
+    [Header("GameOverPopup References")]
     [SerializeField] GameObject GameOverPopup;
+    [SerializeField] MatchDuration MatchTimer;
+    public TMP_Text FinalMatchDuration;
+    public TMP_Text MatchWinner;
     [Header("Winning Patterns")]
      public WinningPatternsGroup[] WinningCombinations;
     int TileCount;
     [Header("Other Variables")]
     public bool SomeoneWon = false;
     public float EndGamePopupWait;
+
 
     private void Start()
     {
@@ -44,18 +50,13 @@ public class OnGameEnd : MonoBehaviour
             {
                 
                 if (Players.CurrentTurn == PlayerSymbol.X) // who wins
-                {
-                    
-
+                {                   
                     Strike.GenerateStrikeAnimation(StrikeLine);
                     StartCoroutine(DisplayWinner(Players.CurrentTurn));
                     return;
-
-
                 }
                 else
-                {
-                    
+                {                   
                     Strike.GenerateStrikeAnimation(StrikeLine);
                     StartCoroutine(DisplayWinner(Players.CurrentTurn));
                     return;
@@ -71,6 +72,9 @@ public class OnGameEnd : MonoBehaviour
         SomeoneWon = true;
         yield return new WaitForSeconds(EndGamePopupWait);
         GameOverPopup.SetActive(true);
+        FinalMatchDuration.text = "Match Duration " + MatchTimer.timerText.text;
+        MatchWinner.text = "The winner is " + winner;
+
 
     }
    

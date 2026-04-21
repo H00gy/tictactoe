@@ -11,14 +11,14 @@ public class MovesCounter : MonoBehaviour
 
     private void Start()
     {
-        PlayerMoves.text = "Move " + 0.ToString();
+        PlayerMoves.text = 0.ToString();
         MovesCount= 0;
     }
     public void CountMoves()
     {
         
         MovesCount++;
-        PlayerMoves.text = "Move " + MovesCount.ToString();
+        PlayerMoves.text = MovesCount.ToString();
     }
     public void SetImageStyle(Sprite style)
     {
