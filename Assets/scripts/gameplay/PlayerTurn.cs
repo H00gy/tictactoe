@@ -7,6 +7,8 @@ public class PlayerTurn : MonoBehaviour
     [SerializeField] GridScript Grid;
     [SerializeField] PlayerSwitch Players;
     [SerializeField] OnGameEnd GameEndState;
+    [SerializeField] MovesCounter XMoves;
+    [SerializeField] MovesCounter OMoves;
     [Header("XO Styles")]
     public StyleGroup[] StyleGroups; 
     int GridButtonCount = 1;
@@ -17,6 +19,9 @@ public class PlayerTurn : MonoBehaviour
         // debugging
 
         StyleIndex = Random.Range(0, 2);
+        XMoves.SetImageStyle(StyleGroups[StyleIndex].X);
+        OMoves.SetImageStyle(StyleGroups[StyleIndex].O);
+
 
     }
     public void OnButtonClick(int index)
@@ -29,11 +34,13 @@ public class PlayerTurn : MonoBehaviour
         if (Players.CurrentTurn == PlayerSymbol.X) // assign style
         {
             Grid.GridButtons[index].image.sprite = StyleGroups[StyleIndex].X;
+            XMoves.CountMoves();
             GameEndState.WinState();
         }
         else
         {
             Grid.GridButtons[index].image.sprite = StyleGroups[StyleIndex].O;
+            OMoves.CountMoves();
             GameEndState.WinState();
         }
 

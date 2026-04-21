@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class OnGameEnd : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] GameStart Grid;
+    //[SerializeField] GameStart Grid;
     [SerializeField] PlayerTurn PlayerTurns;
     [SerializeField] PlayerSwitch Players;
     [SerializeField] StrikeLine Strike;
@@ -37,6 +37,7 @@ public class OnGameEnd : MonoBehaviour
                 if (Players.CurrentTurn == PlayerSymbol.X) // who wins
                 {
                     DisplayWinner(Players.CurrentTurn);
+
                     Strike.GenerateStrikeAnimation(StrikeLine);
                     
                 }
