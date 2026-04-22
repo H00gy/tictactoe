@@ -3697,6 +3697,7 @@ GameObject:
   - component: {fileID: 1716741799}
   - component: {fileID: 1716741801}
   - component: {fileID: 1716741800}
+  - component: {fileID: 1716741802}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3756,7 +3757,6 @@ MonoBehaviour:
     O: {fileID: -5029703094226174211, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
   - X: {fileID: -5671269848223593115, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
     O: {fileID: -1950665664707622766, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
-  StyleIndex: 0
 --- !u!114 &1716741799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3772,6 +3772,7 @@ MonoBehaviour:
   PlayerTurns: {fileID: 1716741798}
   Players: {fileID: 1716741795}
   Strike: {fileID: 738758252}
+  statsDataManager: {fileID: 1716741802}
   GameOverPopup: {fileID: 1801978770}
   MatchTimer: {fileID: 946178345}
   FinalMatchDuration: {fileID: 206609859}
@@ -3844,6 +3845,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneController: {fileID: 1716741800}
+--- !u!114 &1716741802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716741794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15e64cf20ccfd0445923c78e405f4d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1718297332 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4840676450181626615, guid: e7fccb80c81b253469dd873974fa4522, type: 3}
