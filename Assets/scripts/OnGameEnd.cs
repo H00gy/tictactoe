@@ -10,6 +10,7 @@ public class OnGameEnd : MonoBehaviour
     [SerializeField] PlayerTurn PlayerTurns;
     [SerializeField] PlayerSwitch Players;
     [SerializeField] StrikeLine Strike;
+    [SerializeField] StatsDataManager statsDataManager;
     [Header("GameOverPopup References")]
     [SerializeField] GameObject GameOverPopup;
     [SerializeField] MatchDuration MatchTimer;
@@ -21,6 +22,8 @@ public class OnGameEnd : MonoBehaviour
     [Header("Other Variables")]
     public bool SomeoneWon = false;
     public float EndGamePopupWait;
+
+    
 
 
     private void Start()
@@ -67,7 +70,8 @@ public class OnGameEnd : MonoBehaviour
     }
     IEnumerator DisplayWinner(PlayerSymbol winner)
     {
-
+        statsDataManager.SaveData();
+        StatsDataManager.TotalGames++;
         Debug.Log("winner is " + winner);  //temp
         SomeoneWon = true;
         yield return new WaitForSeconds(EndGamePopupWait);
@@ -79,6 +83,9 @@ public class OnGameEnd : MonoBehaviour
     }
     IEnumerator DisplayDraw()
     {
+        statsDataManager.SaveData();
+        StatsDataManager.TotalGames++;
+        StatsDataManager.DrawCount++;
         yield return new WaitForSeconds(EndGamePopupWait);
         GameOverPopup.SetActive(true);
         FinalMatchDuration.text = "Match Duration " + MatchTimer.timerText.text;

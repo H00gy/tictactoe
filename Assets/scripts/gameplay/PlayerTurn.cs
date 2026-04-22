@@ -36,12 +36,14 @@ public class PlayerTurn : MonoBehaviour
             Grid.GridButtons[index].image.sprite = StyleGroups[StyleIndex].X;
             XMoves.CountMoves();
             GameEndState.WinState();
+            StatsDataManager.PlayerXWins++;
         }
         else
         {
             Grid.GridButtons[index].image.sprite = StyleGroups[StyleIndex].O;
             OMoves.CountMoves();
             GameEndState.WinState();
+            StatsDataManager.PlayerOWins++;
         }
 
         GridButtonCount++;
