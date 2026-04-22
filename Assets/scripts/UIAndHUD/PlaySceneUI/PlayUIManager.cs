@@ -15,6 +15,10 @@ public class PlayUIManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void CloseThemeSelect()
+    {
+        ThemeSelect.SetActive(false);
+    }
     public void OpenThemeSelect()
     {
         ThemeSelect.SetActive(true);

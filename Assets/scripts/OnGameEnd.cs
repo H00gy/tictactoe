@@ -30,7 +30,7 @@ public class OnGameEnd : MonoBehaviour
     }
     public void DrawState()
     {
-        Debug.Log("draw "); 
+        StartCoroutine(DisplayDraw()); 
     }
     public void WinState()
     {
@@ -76,6 +76,13 @@ public class OnGameEnd : MonoBehaviour
         MatchWinner.text = "The winner is " + winner;
 
 
+    }
+    IEnumerator DisplayDraw()
+    {
+        yield return new WaitForSeconds(EndGamePopupWait);
+        GameOverPopup.SetActive(true);
+        FinalMatchDuration.text = "Match Duration " + MatchTimer.timerText.text;
+        MatchWinner.text = "Draw";
     }
    
 
