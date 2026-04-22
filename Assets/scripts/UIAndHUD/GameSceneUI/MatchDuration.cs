@@ -29,7 +29,7 @@ public class MatchDuration : MonoBehaviour
             UpdateTimerText();
         }
 
-        time += StatsDataManager.TotalMatchTime;
+        StatsDataManager.TotalMatchTime += CurrentTime;
     }
     void UpdateTimerText() 
     {

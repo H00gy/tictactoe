@@ -13,7 +13,6 @@ public class StatsDataManager : MonoBehaviour
     public static float AverageMatchTime;
 
     public void SaveData()
-
     {
 
         StatsData statsData = new StatsData();
@@ -22,7 +21,15 @@ public class StatsDataManager : MonoBehaviour
         statsData.PlayerOWins = PlayerOWins;
         statsData.DrawCount = DrawCount;
         statsData.TotalMatchTime = TotalMatchTime;
-        statsData.AverageMatchTime = TotalMatchTime / TotalGames;
+        if (TotalGames> 0)
+        {
+            statsData.AverageMatchTime = TotalMatchTime / TotalGames;
+        }
+        else
+        {
+            TotalMatchTime= 0;
+        }
+        
 
         string json = JsonUtility.ToJson(statsData);
         string path = Application.persistentDataPath + "/statsData.json";
@@ -35,7 +42,7 @@ public class StatsDataManager : MonoBehaviour
 
         if (File.Exists(path))
         {
-            string json = System.IO.File.ReadAllText(path); // went back to json because it would be better for a more realistic build because it cannot be altered
+            string json = System.IO.File.ReadAllText(path); // went back to json because it would be better for a more realistic build because it cannot be 
             StatsData LoadedData = JsonUtility.FromJson<StatsData>(json);
 
             TotalGames = LoadedData.TotalGames;
