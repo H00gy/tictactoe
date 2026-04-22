@@ -56,12 +56,14 @@ public class OnGameEnd : MonoBehaviour
                 {                   
                     Strike.GenerateStrikeAnimation(StrikeLine);
                     StartCoroutine(DisplayWinner(Players.CurrentTurn));
+                    StatsDataManager.PlayerXWins++;
                     return;
                 }
                 else
                 {                   
                     Strike.GenerateStrikeAnimation(StrikeLine);
                     StartCoroutine(DisplayWinner(Players.CurrentTurn));
+                    StatsDataManager.PlayerOWins++;
                     return;
                 }
             }
@@ -70,26 +72,27 @@ public class OnGameEnd : MonoBehaviour
     }
     IEnumerator DisplayWinner(PlayerSymbol winner)
     {
-        statsDataManager.SaveData();
+
         StatsDataManager.TotalGames++;
-        Debug.Log("winner is " + winner);  //temp
         SomeoneWon = true;
         yield return new WaitForSeconds(EndGamePopupWait);
         GameOverPopup.SetActive(true);
         FinalMatchDuration.text = "Match Duration " + MatchTimer.timerText.text;
         MatchWinner.text = "The winner is " + winner;
+        statsDataManager.SaveData();
 
 
     }
     IEnumerator DisplayDraw()
     {
-        statsDataManager.SaveData();
+
         StatsDataManager.TotalGames++;
         StatsDataManager.DrawCount++;
         yield return new WaitForSeconds(EndGamePopupWait);
         GameOverPopup.SetActive(true);
         FinalMatchDuration.text = "Match Duration " + MatchTimer.timerText.text;
         MatchWinner.text = "Draw";
+        statsDataManager.SaveData();
     }
    
 

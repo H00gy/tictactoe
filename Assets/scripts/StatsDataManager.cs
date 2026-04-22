@@ -14,37 +14,31 @@ public class StatsDataManager : MonoBehaviour
 
     public void SaveData()
     {
-        StatsData statsData = new StatsData();
-        statsData.TotalGames= TotalGames;
-        statsData.PlayerXWins= PlayerXWins;
-        statsData.PlayerOWins= PlayerOWins;
-        statsData.DrawCount= DrawCount;
-        statsData.TotalMatchTime= TotalMatchTime;
-        statsData.AverageMatchTime = TotalMatchTime / TotalGames;
+        
+        AverageMatchTime = TotalMatchTime / TotalGames;
 
-        string json = JsonUtility.ToJson(statsData);
-        string path = Application.persistentDataPath+ "/statsData.json";
-        System.IO.File.WriteAllText(path, json);
+        // Save each variable to a unique "Key"
+        PlayerPrefs.SetInt("TotalGames", TotalGames);
+        PlayerPrefs.SetInt("PlayerXWins", PlayerXWins);
+        PlayerPrefs.SetInt("PlayerOWins", PlayerOWins);
+        PlayerPrefs.SetInt("DrawCount", DrawCount);
+        PlayerPrefs.SetFloat("TotalMatchTime", TotalMatchTime);
+        PlayerPrefs.SetFloat("AverageMatchTime", AverageMatchTime);
+
+        // Forces Unity to write the data to disk immediately
+        PlayerPrefs.Save();
 
     }
     public void LoadData()
     {
-        string path = Application.persistentDataPath + "/statsData.json";
-        if (File.Exists(path))
-        {
-            string json = System.IO.File.ReadAllText(path);
-            StatsData LoadedData = JsonUtility.FromJson<StatsData>(json);
+        // Get data using the keys. The second number (0) is the default if no save exists.
+        TotalGames = PlayerPrefs.GetInt("TotalGames", 0);
+        PlayerXWins = PlayerPrefs.GetInt("PlayerXWins", 0);
+        PlayerOWins = PlayerPrefs.GetInt("PlayerOWins", 0);
+        DrawCount = PlayerPrefs.GetInt("DrawCount", 0);
+        TotalMatchTime = PlayerPrefs.GetFloat("TotalMatchTime", 0f);
+        AverageMatchTime = PlayerPrefs.GetFloat("AverageMatchTime", 0f);
 
-            TotalGames= LoadedData.TotalGames;
-            PlayerXWins= LoadedData.PlayerXWins;
-            PlayerOWins= LoadedData.PlayerOWins;
-            DrawCount= LoadedData.DrawCount;
-            TotalMatchTime = LoadedData.TotalMatchTime;
-            AverageMatchTime= LoadedData.AverageMatchTime;
-        }
-        else
-        {
-            Debug.LogWarning("statsData file not found");
-        }
+        Debug.Log("Stats loaded via PlayerPrefs!");
     }
 }

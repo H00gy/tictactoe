@@ -35,7 +35,7 @@ public class MatchDuration : MonoBehaviour
     {
         timerText.text = FormatTime(CurrentTime);
     }
-    public string FormatTime(float time) //makes timer readable
+    string FormatTime(float time) //makes timer readable
     {
         int minutes = Mathf.FloorToInt(time / 60);
         int seconds = Mathf.FloorToInt(time % 60);
