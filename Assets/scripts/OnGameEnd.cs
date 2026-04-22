@@ -6,7 +6,7 @@ using System.Collections;
 public class OnGameEnd : MonoBehaviour
 {
     [Header("References")]
-    //[SerializeField] GameStart Grid;
+    [SerializeField] GridScript Grid;
     [SerializeField] PlayerTurn PlayerTurns;
     [SerializeField] PlayerSwitch Players;
     [SerializeField] StrikeLine Strike;
@@ -33,6 +33,7 @@ public class OnGameEnd : MonoBehaviour
     }
     public void DrawState()
     {
+        Grid.DisableButtons();
         StartCoroutine(DisplayDraw()); 
     }
     public void WinState()
@@ -56,6 +57,7 @@ public class OnGameEnd : MonoBehaviour
                 {                   
                     Strike.GenerateStrikeAnimation(StrikeLine);
                     StartCoroutine(DisplayWinner(Players.CurrentTurn));
+                    Grid.DisableButtons();
                     StatsDataManager.PlayerXWins++;
                     return;
                 }
@@ -63,6 +65,7 @@ public class OnGameEnd : MonoBehaviour
                 {                   
                     Strike.GenerateStrikeAnimation(StrikeLine);
                     StartCoroutine(DisplayWinner(Players.CurrentTurn));
+                    Grid.DisableButtons();
                     StatsDataManager.PlayerOWins++;
                     return;
                 }

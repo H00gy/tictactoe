@@ -1,8 +1,9 @@
 using UnityEngine;
 using System.IO;
-
 public class StatsDataManager : MonoBehaviour
+
 {
+
     [Header("Saved Variables")]
     public static int TotalGames;
     public static int PlayerXWins;
@@ -11,34 +12,45 @@ public class StatsDataManager : MonoBehaviour
     public static float TotalMatchTime;
     public static float AverageMatchTime;
 
-
     public void SaveData()
+
     {
-        
-        AverageMatchTime = TotalMatchTime / TotalGames;
 
-        // Save each variable to a unique "Key"
-        PlayerPrefs.SetInt("TotalGames", TotalGames);
-        PlayerPrefs.SetInt("PlayerXWins", PlayerXWins);
-        PlayerPrefs.SetInt("PlayerOWins", PlayerOWins);
-        PlayerPrefs.SetInt("DrawCount", DrawCount);
-        PlayerPrefs.SetFloat("TotalMatchTime", TotalMatchTime);
-        PlayerPrefs.SetFloat("AverageMatchTime", AverageMatchTime);
+        StatsData statsData = new StatsData();
+        statsData.TotalGames = TotalGames;
+        statsData.PlayerXWins = PlayerXWins;
+        statsData.PlayerOWins = PlayerOWins;
+        statsData.DrawCount = DrawCount;
+        statsData.TotalMatchTime = TotalMatchTime;
+        statsData.AverageMatchTime = TotalMatchTime / TotalGames;
 
-        // Forces Unity to write the data to disk immediately
-        PlayerPrefs.Save();
-
+        string json = JsonUtility.ToJson(statsData);
+        string path = Application.persistentDataPath + "/statsData.json";
+        System.IO.File.WriteAllText(path, json);
     }
+
     public void LoadData()
     {
-        // Get data using the keys. The second number (0) is the default if no save exists.
-        TotalGames = PlayerPrefs.GetInt("TotalGames", 0);
-        PlayerXWins = PlayerPrefs.GetInt("PlayerXWins", 0);
-        PlayerOWins = PlayerPrefs.GetInt("PlayerOWins", 0);
-        DrawCount = PlayerPrefs.GetInt("DrawCount", 0);
-        TotalMatchTime = PlayerPrefs.GetFloat("TotalMatchTime", 0f);
-        AverageMatchTime = PlayerPrefs.GetFloat("AverageMatchTime", 0f);
+        string path = Application.persistentDataPath + "/statsData.json";
 
-        Debug.Log("Stats loaded via PlayerPrefs!");
+        if (File.Exists(path))
+        {
+            string json = System.IO.File.ReadAllText(path); // went back to json because it would be better for a more realistic build because it cannot be altered
+            StatsData LoadedData = JsonUtility.FromJson<StatsData>(json);
+
+            TotalGames = LoadedData.TotalGames;
+            PlayerXWins = LoadedData.PlayerXWins;
+            PlayerOWins = LoadedData.PlayerOWins;
+            DrawCount = LoadedData.DrawCount;
+            TotalMatchTime = LoadedData.TotalMatchTime;
+            AverageMatchTime = LoadedData.AverageMatchTime;
+        }
+
+        else
+        {
+            Debug.LogWarning("statsData file not found");
+        }
+
     }
+
 }
