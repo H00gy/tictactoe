@@ -13,6 +13,10 @@ public class PlayerTurn : MonoBehaviour
     public StyleGroup[] StyleGroups; 
     int GridButtonCount = 1;
     public static int StyleIndex;
+    [Header("SFX")]
+    public AudioSource XSound;
+    public AudioSource OSound;
+
 
     private void Awake()
     {
@@ -33,12 +37,14 @@ public class PlayerTurn : MonoBehaviour
         
         if (Players.CurrentTurn == PlayerSymbol.X) // assign style
         {
+            XSound.Play();
             Grid.GridButtons[index].image.sprite = StyleGroups[StyleIndex].X;
             XMoves.CountMoves();
             GameEndState.WinState();
         }
         else
         {
+            OSound.Play();
             Grid.GridButtons[index].image.sprite = StyleGroups[StyleIndex].O;
             OMoves.CountMoves();
             GameEndState.WinState();

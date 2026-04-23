@@ -7,7 +7,9 @@ public class SettingsButtonScript : MonoBehaviour
     public GameObject SettingsPopup;
     [Header("Sound References")]
     public AudioSource Music;
-    public GameObject SFX;
+    public GameObject SFXGameobject;
+    public AudioSource PrimaryButtonClickSound;
+    public AudioSource SecondaryButtonClickSound;
 
 
     private void Start()
@@ -16,10 +18,12 @@ public class SettingsButtonScript : MonoBehaviour
     }
     public void OpenSettings()
     {
+        PrimaryButtonClickSound.Play();
         SettingsPopup.SetActive(true);
     }
     public void CloseSettings()
     {
+        SecondaryButtonClickSound.Play();
         SettingsPopup.SetActive(false);
     }
     public void ToggleMusic(bool isMusicOn)
@@ -39,14 +43,14 @@ public class SettingsButtonScript : MonoBehaviour
     {
         if (isSFXOn)
         {
-            foreach (Transform Sound in SFX.transform)
+            foreach (Transform Sound in SFXGameobject.transform)
             {
                 Sound.GetComponent<AudioSource>().volume = 1;
             }
         }
         else
         {
-            foreach (Transform Sound in SFX.transform)
+            foreach (Transform Sound in SFXGameobject.transform)
             {
                 Sound.GetComponent<AudioSource>().volume = 0;
             }

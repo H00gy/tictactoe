@@ -11,18 +11,21 @@ public class OnGameEnd : MonoBehaviour
     [SerializeField] PlayerSwitch Players;
     [SerializeField] StrikeLine Strike;
     [SerializeField] StatsDataManager statsDataManager;
+
     [Header("GameOverPopup References")]
     [SerializeField] GameObject GameOverPopup;
     [SerializeField] MatchDuration MatchTimer;
     public TMP_Text FinalMatchDuration;
     public TMP_Text MatchWinner;
+
     [Header("Winning Patterns")]
      public WinningPatternsGroup[] WinningCombinations;
     int TileCount;
+
     [Header("Other Variables")]
     public bool SomeoneWon = false;
     public float EndGamePopupWait;
-
+    public AudioSource StrikeLineSound;
     
 
 
@@ -54,7 +57,8 @@ public class OnGameEnd : MonoBehaviour
             {
                 
                 if (Players.CurrentTurn == PlayerSymbol.X) // who wins
-                {                   
+                {    
+                    StrikeLineSound.Play();
                     Strike.GenerateStrikeAnimation(StrikeLine);
                     StartCoroutine(DisplayWinner(Players.CurrentTurn));
                     Grid.DisableButtons();
@@ -62,7 +66,8 @@ public class OnGameEnd : MonoBehaviour
                     return;
                 }
                 else
-                {                   
+                {
+                    StrikeLineSound.Play();
                     Strike.GenerateStrikeAnimation(StrikeLine);
                     StartCoroutine(DisplayWinner(Players.CurrentTurn));
                     Grid.DisableButtons();
