@@ -11,6 +11,8 @@ public class StatsDataManager : MonoBehaviour
     public static int DrawCount;
     public static float TotalMatchTime;
     public static float AverageMatchTime;
+    public static bool IsMusicOn;
+    public static bool IsSFXOn;
 
     public void SaveData()
     {
@@ -21,6 +23,8 @@ public class StatsDataManager : MonoBehaviour
         statsData.PlayerOWins = PlayerOWins;
         statsData.DrawCount = DrawCount;
         statsData.TotalMatchTime = TotalMatchTime;
+        statsData.IsMusicOn = IsMusicOn;
+        statsData.IsSFXOn= IsSFXOn;
         if (TotalGames> 0)
         {
             statsData.AverageMatchTime = TotalMatchTime / TotalGames;
@@ -51,6 +55,8 @@ public class StatsDataManager : MonoBehaviour
             DrawCount = LoadedData.DrawCount;
             TotalMatchTime = LoadedData.TotalMatchTime;
             AverageMatchTime = LoadedData.AverageMatchTime;
+            IsMusicOn= LoadedData.IsMusicOn;
+            IsSFXOn= LoadedData.IsSFXOn;
         }
 
         else
@@ -59,5 +65,6 @@ public class StatsDataManager : MonoBehaviour
         }
 
     }
+    
 
 }

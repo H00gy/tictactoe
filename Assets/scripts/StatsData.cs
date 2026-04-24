@@ -9,4 +9,6 @@ public class StatsData
     public int DrawCount;
     public float TotalMatchTime;
     public float AverageMatchTime;
+    public bool IsMusicOn;
+    public bool IsSFXOn;
 }

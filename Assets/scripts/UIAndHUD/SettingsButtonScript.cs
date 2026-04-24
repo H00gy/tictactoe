@@ -12,6 +12,10 @@ public class SettingsButtonScript : MonoBehaviour
     public AudioSource SecondaryButtonClickSound;
 
 
+    private void Awake()
+    {
+        GetComponent<StatsDataManager>().LoadData();
+    }
     private void Start()
     {
         SettingsPopup.SetActive(false);
@@ -30,10 +34,12 @@ public class SettingsButtonScript : MonoBehaviour
     {
         if (isMusicOn)
         {
+            StatsDataManager.IsMusicOn = true;
             Music.Play();
         }
         else
         {
+            StatsDataManager.IsMusicOn = false;
             Music.Stop();
         }
         
@@ -45,6 +51,7 @@ public class SettingsButtonScript : MonoBehaviour
         {
             foreach (Transform Sound in SFXGameobject.transform)
             {
+                StatsDataManager.IsSFXOn = true;
                 Sound.GetComponent<AudioSource>().volume = 1;
             }
         }
@@ -52,6 +59,7 @@ public class SettingsButtonScript : MonoBehaviour
         {
             foreach (Transform Sound in SFXGameobject.transform)
             {
+                StatsDataManager.IsSFXOn = false;
                 Sound.GetComponent<AudioSource>().volume = 0;
             }
         }

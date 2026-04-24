@@ -163,7 +163,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ccc27791be4323d499287c9a484d58ec, type: 3}
   m_Resource: {fileID: 8300000, guid: ccc27791be4323d499287c9a484d58ec, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -411,8 +411,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+      - m_Target: {fileID: 1501867667}
+        m_TargetAssemblyTypeName: GameSceneButtonManager, Assembly-CSharp
         m_MethodName: ExitToMenu
         m_Mode: 1
         m_Arguments:
@@ -1116,7 +1116,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 73855656d2cdacc4ab924ef7a30b9738, type: 3}
   m_Resource: {fileID: 8300000, guid: 73855656d2cdacc4ab924ef7a30b9738, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1688,10 +1688,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 36036560}
   - {fileID: 1195817942}
   - {fileID: 841586471}
   - {fileID: 346006088}
-  - {fileID: 36036560}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &652339995
@@ -2247,7 +2247,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 66e1f826faad5944faaf643bca745f4d, type: 3}
   m_Resource: {fileID: 8300000, guid: 66e1f826faad5944faaf643bca745f4d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2636,10 +2636,10 @@ PrefabInstance:
     - target: {fileID: 3779840544703899054, guid: b29cb811265118e46b2104ca8062e146, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1501867664}
+      objectReference: {fileID: 1501867665}
     - target: {fileID: 3779840544703899054, guid: b29cb811265118e46b2104ca8062e146, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: OpenSettings
       objectReference: {fileID: 0}
     - target: {fileID: 4141687023679332557, guid: b29cb811265118e46b2104ca8062e146, type: 3}
       propertyPath: m_Name
@@ -3182,7 +3182,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3eec0d7821bde8d4c98ab3fb6f7379c1, type: 3}
   m_Resource: {fileID: 8300000, guid: 3eec0d7821bde8d4c98ab3fb6f7379c1, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3799,8 +3799,8 @@ MonoBehaviour:
   SettingsPopup: {fileID: 1771667277}
   Music: {fileID: 1382977494}
   SFXGameobject: {fileID: 622465046}
-  PrimaryButtonClickSound: {fileID: 0}
-  SecondaryButtonClickSound: {fileID: 0}
+  PrimaryButtonClickSound: {fileID: 1195817943}
+  SecondaryButtonClickSound: {fileID: 841586472}
 --- !u!114 &1501867666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3826,6 +3826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneController: {fileID: 1501867666}
+  ButtonSound: {fileID: 1195817943}
 --- !u!4 &1501867668
 Transform:
   m_ObjectHideFlags: 0
@@ -4617,6 +4618,8 @@ MonoBehaviour:
     O: {fileID: -5029703094226174211, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
   - X: {fileID: -5671269848223593115, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
     O: {fileID: -1950665664707622766, guid: 758f786fc0b29d04c9a6d3dbae5bfc1e, type: 3}
+  XSound: {fileID: 841586472}
+  OSound: {fileID: 346006089}
 --- !u!114 &1716741799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4681,6 +4684,7 @@ MonoBehaviour:
     StrikeLine: {fileID: 1675127769}
   SomeoneWon: 0
   EndGamePopupWait: 0.75
+  StrikeLineSound: {fileID: 36036561}
 --- !u!114 &1716741802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4872,6 +4876,30 @@ PrefabInstance:
     - target: {fileID: 1300732877481897799, guid: 737a6d77321fe1f46829d1b4ec0f0292, type: 3}
       propertyPath: m_Name
       value: SettingsPopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099344290296851371, guid: 737a6d77321fe1f46829d1b4ec0f0292, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1501867665}
+    - target: {fileID: 3099344290296851371, guid: 737a6d77321fe1f46829d1b4ec0f0292, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762787478123830118, guid: 737a6d77321fe1f46829d1b4ec0f0292, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1501867665}
+    - target: {fileID: 3762787478123830118, guid: 737a6d77321fe1f46829d1b4ec0f0292, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634921125858677302, guid: 737a6d77321fe1f46829d1b4ec0f0292, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1501867665}
+    - target: {fileID: 8634921125858677302, guid: 737a6d77321fe1f46829d1b4ec0f0292, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseSettings
       objectReference: {fileID: 0}
     - target: {fileID: 8642122245413561517, guid: 737a6d77321fe1f46829d1b4ec0f0292, type: 3}
       propertyPath: m_Pivot.x
@@ -5142,8 +5170,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+      - m_Target: {fileID: 1501867667}
+        m_TargetAssemblyTypeName: GameSceneButtonManager, Assembly-CSharp
         m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
