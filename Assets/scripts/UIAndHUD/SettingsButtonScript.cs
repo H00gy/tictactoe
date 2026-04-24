@@ -20,8 +20,8 @@ public class SettingsButtonScript : MonoBehaviour
     }
     private void Start()
     {
-        SettingsPopup.SetActive(false);
-        if (MusicToggle != null) MusicToggle.isOn = StatsDataManager.IsMusicOn;
+        SettingsPopup.SetActive(false); 
+        if (MusicToggle != null) MusicToggle.isOn = StatsDataManager.IsMusicOn; // aligns toggle switches with saved state
         if (SFXToggle != null) SFXToggle.isOn = StatsDataManager.IsSFXOn;
     }
     public void OpenSettings()
@@ -46,7 +46,7 @@ public class SettingsButtonScript : MonoBehaviour
             StatsDataManager.IsMusicOn = false;
             Music.Stop();
         }
-        
+        GetComponent<StatsDataManager>().SaveData();
     }
     
     public void ToggleSFX(bool isSFXOn)
@@ -67,8 +67,8 @@ public class SettingsButtonScript : MonoBehaviour
                 Sound.GetComponent<AudioSource>().volume = 0;
             }
         }
-        
-        
+        GetComponent<StatsDataManager>().SaveData();
+
     }
     
 }
