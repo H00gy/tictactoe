@@ -23,6 +23,8 @@ public class DeveloperTools
             StatsDataManager.DrawCount = 0;
             StatsDataManager.TotalMatchTime = 0;
             StatsDataManager.AverageMatchTime = 0;
+            StatsDataManager.IsMusicOn = true;
+            StatsDataManager.IsSFXOn= true;
 
             Debug.Log("<color=green>--- JSON Save File Deleted and Memory Reset! ---</color>");
         }

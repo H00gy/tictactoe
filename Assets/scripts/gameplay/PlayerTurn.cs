@@ -52,7 +52,7 @@ public class PlayerTurn : MonoBehaviour
 
         GridButtonCount++;
 
-        if (GridButtonCount > Grid.GridButtons.Length) { GameEndState.DrawState(); } 
+        if (GridButtonCount > Grid.GridButtons.Length && !GameEndState.SomeoneWon) { GameEndState.DrawState(); } 
 
         Players.ToggleTurn(); // change turn, last so it doesn't determine the wrong winning player
     }

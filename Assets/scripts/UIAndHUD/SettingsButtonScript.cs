@@ -10,7 +10,9 @@ public class SettingsButtonScript : MonoBehaviour
     public GameObject SFXGameobject;
     public AudioSource PrimaryButtonClickSound;
     public AudioSource SecondaryButtonClickSound;
-
+    [Header("UI Toggles")]
+    public Toggle MusicToggle;
+    public Toggle SFXToggle;
 
     private void Awake()
     {
@@ -19,6 +21,8 @@ public class SettingsButtonScript : MonoBehaviour
     private void Start()
     {
         SettingsPopup.SetActive(false);
+        if (MusicToggle != null) MusicToggle.isOn = StatsDataManager.IsMusicOn;
+        if (SFXToggle != null) SFXToggle.isOn = StatsDataManager.IsSFXOn;
     }
     public void OpenSettings()
     {
