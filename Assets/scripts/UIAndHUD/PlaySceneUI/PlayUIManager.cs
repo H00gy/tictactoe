@@ -8,6 +8,7 @@ public class PlayUIManager : MonoBehaviour
     [Header("Popup References")]
     public GameObject ThemeSelect;
     public GameObject StatsPopup;
+    public GameObject ExitPopup;
     [Header("Button Sound")]
     public AudioSource PrimaryButtonClickSound;
     public AudioSource SecondaryButtonClickSound;
@@ -16,6 +17,7 @@ public class PlayUIManager : MonoBehaviour
     {
         ThemeSelect.SetActive(false);
         StatsPopup.SetActive(false);
+        ExitPopup.SetActive(false);
     }
 
     // play Button Popup
@@ -54,6 +56,20 @@ public class PlayUIManager : MonoBehaviour
     {
         SecondaryButtonClickSound.Play();
         StatsPopup.SetActive(false);
+    }
+    public void OpenExitPopup()
+    {
+        PrimaryButtonClickSound.Play();
+        ExitPopup.SetActive(true);
+    }
+    public void CloseExitPopup()
+    {
+        SecondaryButtonClickSound.Play();
+        ExitPopup.SetActive(false);
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
     
