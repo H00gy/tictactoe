@@ -2339,7 +2339,7 @@ GameObject:
   - component: {fileID: 1011338106}
   m_Layer: 0
   m_Name: pop
-  m_TagString: Untagged
+  m_TagString: PrimaryButtonSound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3658,7 +3658,7 @@ GameObject:
   - component: {fileID: 1568218535}
   m_Layer: 0
   m_Name: click2
-  m_TagString: Untagged
+  m_TagString: SecondaryButtonSound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
