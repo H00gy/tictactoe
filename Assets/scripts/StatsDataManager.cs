@@ -11,8 +11,8 @@ public class StatsDataManager : MonoBehaviour
     public static int DrawCount;
     public static float TotalMatchTime;
     public static float AverageMatchTime;
-    public static bool IsMusicOn;
-    public static bool IsSFXOn;
+    public static bool IsMusicOn = true;
+    public static bool IsSFXOn = true;
 
     public void SaveData()
     {

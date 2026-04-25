@@ -3677,7 +3677,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1501867668}
   - component: {fileID: 1501867667}
-  - component: {fileID: 1501867666}
   - component: {fileID: 1501867665}
   - component: {fileID: 1501867669}
   m_Layer: 0
@@ -3706,18 +3705,6 @@ MonoBehaviour:
   SecondaryButtonClickSound: {fileID: 841586472}
   MusicToggle: {fileID: 1771667280}
   SFXToggle: {fileID: 1771667279}
---- !u!114 &1501867666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501867664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac12148d00c9c9a488af10d207ebe022, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1501867667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3730,7 +3717,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adeeb63f70004114288f18fb3677dd6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneController: {fileID: 1501867666}
   ButtonSound: {fileID: 1195817943}
 --- !u!4 &1501867668
 Transform:

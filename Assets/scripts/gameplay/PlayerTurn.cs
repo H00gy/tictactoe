@@ -20,9 +20,7 @@ public class PlayerTurn : MonoBehaviour
 
     private void Awake()
     {
-        // debugging
 
-        //StyleIndex = Random.Range(0, 2);
         XMoves.SetImageStyle(StyleGroups[StyleIndex].X);
         OMoves.SetImageStyle(StyleGroups[StyleIndex].O);
 

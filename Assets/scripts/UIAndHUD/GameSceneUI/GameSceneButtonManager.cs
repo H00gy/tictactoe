@@ -3,17 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneButtonManager : MonoBehaviour
 {
-    [SerializeField] SceneController sceneController;
     public AudioSource ButtonSound;
     
     public void Retry() // for retry button
     {
         ButtonSound.Play();
-        sceneController.LoadGame();
+        SceneManager.LoadScene(1);
     }
     public void ExitToMenu()
     {
         ButtonSound.Play();
-        sceneController.LoadMenu();
+        SceneManager.LoadScene(0);
     }
 }

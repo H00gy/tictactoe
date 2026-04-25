@@ -17,8 +17,8 @@ public class SettingsButtonScript : MonoBehaviour
     private void Awake()
     {
         GetComponent<StatsDataManager>().LoadData();
-        PrimaryButtonClickSound.volume = 0f;
-        SecondaryButtonClickSound.volume = 0f;
+        //PrimaryButtonClickSound.volume = 0f;
+        //SecondaryButtonClickSound.volume = 0f;
     }
     private void Start()
     {

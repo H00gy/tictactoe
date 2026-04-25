@@ -40,7 +40,7 @@ public class PlayUIManager : MonoBehaviour
     public void LoadGameScene()
     {
         PrimaryButtonClickSound.Play();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     // Stats Button Popup
